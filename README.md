@@ -28,16 +28,29 @@ GitHub → ArgoCD → Kubernetes (Kind)
 ## 🚀 Steps
 
 ### Install Docker
+Docker → Required for Kind to run containers as cluster nodes.
+---
 sudo apt-get update
 sudo apt install docker.io -y
+sudo usermod -aG docker $USER && newgrp docker
+docker --version
+
+docker ps
+---
 
 ### Install Kind
+
+Guide: https://kind.sigs.k8s.io/docs/user/quick-start/#installation 
+
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64
 
 ### Install kubectl
+Guide: https://kubernetes.io/docs/tasks/tools/ 
 curl -LO https://dl.k8s.io/release/stable.txt/bin/linux/amd64/kubectl
 
 ### Install Helm
+Guide: https://helm.sh/docs/intro/install/
+
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
 
 ### Create Cluster
